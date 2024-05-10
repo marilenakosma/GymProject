@@ -1,10 +1,10 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GymTracker : MonoBehaviour
 {
-    public Text dateText;
+    public TMP_Text date;
     public Button tickButton;
 
     private bool hasWorkedOutToday = false;
@@ -12,10 +12,10 @@ public class GymTracker : MonoBehaviour
     void Start()
     {
         // Get today's date
-        DateTime today = DateTime.Today;
+        string today = System.DateTime.Today.ToString("dd/MM/yyyy");
 
         // Display today's date on the Text UI
-        dateText.text = "Today's date is: " + today.ToString("dd/MM/yyyy");
+        date.text = "Today's date is: " + today;
 
         // Add listener to the tick button
         tickButton.onClick.AddListener(OnTickButtonClick);
@@ -36,3 +36,6 @@ public class GymTracker : MonoBehaviour
         }
     }
 }
+
+
+

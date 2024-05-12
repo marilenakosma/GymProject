@@ -4,7 +4,9 @@ using TMPro;
 
 public class GymTracker : MonoBehaviour
 {
-    public TMP_Text date;
+    public TMP_Text dayText;
+    public TMP_Text monthText;
+    public TMP_Text yearText;
     public Button tickButton;
 
     private bool hasWorkedOutToday = false;
@@ -12,10 +14,12 @@ public class GymTracker : MonoBehaviour
     void Start()
     {
         // Get today's date
-        string today = System.DateTime.Today.ToString("dd/MM/yyyy");
+        System.DateTime today = System.DateTime.Today;
 
         // Display today's date on the Text UI
-        date.text = "Today's date is: " + today;
+        dayText.text = today.Day.ToString();
+        monthText.text = GetEnglishMonthName(today.Month); // Get month name in English
+        yearText.text = today.Year.ToString();
 
         // Add listener to the tick button
         tickButton.onClick.AddListener(OnTickButtonClick);
@@ -35,7 +39,10 @@ public class GymTracker : MonoBehaviour
             Debug.Log("You didn't work out today.");
         }
     }
+
+    // Function to get English month name from month number
+    string GetEnglishMonthName(int monthNumber)
+    {
+        return System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetAbbreviatedMonthName(monthNumber);
+    }
 }
-
-
-

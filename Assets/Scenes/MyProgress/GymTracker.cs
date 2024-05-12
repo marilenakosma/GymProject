@@ -43,6 +43,10 @@ public class GymTracker : MonoBehaviour
     // Function to get English month name from month number
     string GetEnglishMonthName(int monthNumber)
     {
-        return System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetAbbreviatedMonthName(monthNumber);
+        // Create a CultureInfo object for the English culture (en-US)
+        System.Globalization.CultureInfo englishCulture = new System.Globalization.CultureInfo("en-US");
+
+        // Get the full month name using the English culture
+        return englishCulture.DateTimeFormat.GetMonthName(monthNumber);
     }
 }

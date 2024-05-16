@@ -8,6 +8,7 @@ public class GymTracker : MonoBehaviour
     public TMP_Text monthText;
     public TMP_Text yearText;
     public Button tickButton;
+    public Image workoutImage;
 
     private bool hasWorkedOutToday = false;
 
@@ -32,11 +33,11 @@ public class GymTracker : MonoBehaviour
 
         if (hasWorkedOutToday)
         {
-            Debug.Log("You worked out today!");
+            workoutImage.enabled = true; // Enable the image to show workout status
         }
         else
         {
-            Debug.Log("You didn't work out today.");
+            workoutImage.enabled = false; // Disable the image to hide workout status
         }
     }
 

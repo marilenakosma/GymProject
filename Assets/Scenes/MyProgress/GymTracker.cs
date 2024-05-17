@@ -22,6 +22,9 @@ public class GymTracker : MonoBehaviour
         monthText.text = GetEnglishMonthName(today.Month); // Get month name in English
         yearText.text = today.Year.ToString();
 
+        // Ensure the image is initially disabled
+        workoutImage.enabled = false;
+
         // Add listener to the tick button
         tickButton.onClick.AddListener(OnTickButtonClick);
     }

@@ -36,8 +36,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -540, y: 273}
-  m_SizeDelta: {x: 218.2999, y: 80.8808}
+  m_AnchoredPosition: {x: -538.75006, y: 256.5426}
+  m_SizeDelta: {x: 219.8404, y: 101.1631}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &189198607541653031
 CanvasRenderer:
@@ -89,9 +89,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe212687606b5e14f9bb42cbe254029f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TrainerTextImagePrefab: {fileID: 0}
-  TrainerTextPrefab: {fileID: 0}
-  chatContent: {fileID: 0}
+  questionButtons: []
+  trainerTextPrefab: {fileID: 0}
+  trainerImagePrefab: {fileID: 0}
+  contentPanel: {fileID: 0}
 --- !u!1 &2304006267321358152
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,7 +127,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 12, y: 4}
+  m_AnchoredPosition: {x: 7.9, y: 14.5}
   m_SizeDelta: {x: 155.54, y: 16.5225}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6621308287288089645
@@ -184,8 +185,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 17.12
+  m_fontSizeBase: 17.12
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

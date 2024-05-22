@@ -12,8 +12,8 @@ public class FAQManager : MonoBehaviour
     public Transform contentPanel; 
 
     private int selectedCategoryID = 0; 
-    private Vector2 trainerImagePosition = new Vector2(-10f, 266f);
-    private Vector2 trainerTextPosition = new Vector2(300f, 266f);
+    private Vector2 trainerImagePosition = new Vector2(-100f, 408f);
+    private Vector2 trainerTextPosition = new Vector2(300f, 408f);
 
     /*                
      * 
@@ -101,23 +101,23 @@ public class FAQManager : MonoBehaviour
         },
         new string[] // Injury Prevention answers
         {
+            "Structure your weekly routine by balancing different types of exercises: strength training, cardio, flexibility, and rest days.",
+            "Strength training focuses on building muscle mass and strength through resistance exercises, while cardio workouts improve cardiovascular health by increasing your heart rate.",
+            "Progress your workouts by gradually increasing the intensity, duration, or resistance, and incorporating new exercises to challenge your body.",
+            "For weight loss, focus on high-intensity interval training (HIIT), strength training to build muscle (which increases metabolism), and maintaining a healthy diet.",
+            "Create a balanced exercise program by including a variety of workouts (strength, cardio, flexibility), setting achievable goals, and listening to your body to avoid overtraining."
+        },
+        new string[] // Exercise Programs answers
+        {
             "Common exercise-related injuries include sprains, strains, and tendinitis. Avoid them by using proper form, warming up, cooling down, and not overexerting yourself.",
             "Proper form is crucial to avoid injuries and maximize the effectiveness of your exercises.",
             "If you feel pain during a workout, stop immediately and assess the situation. Consult a professional if the pain persists.",
             "To prevent muscle soreness, cool down properly after workouts, stay hydrated, and consider incorporating stretching or foam rolling into your routine.",
             "Recover from an injury by resting, applying ice to the affected area, and gradually returning to exercise. Consult a healthcare provider for a tailored recovery plan."
         },
-        new string[] // Exercise Programs answers
-        {
-            "Structure your weekly routine by balancing different types of exercises: strength training, cardio, flexibility, and rest days. For example, you could do strength training on Monday, Wednesday, and Friday, and cardio on Tuesday and Thursday.",
-            "Strength training focuses on building muscle mass and strength through resistance exercises, while cardio workouts improve cardiovascular health by increasing your heart rate.",
-            "Progress your workouts by gradually increasing the intensity, duration, or resistance, and incorporating new exercises to challenge your body.",
-            "For weight loss, focus on high-intensity interval training (HIIT), strength training to build muscle (which increases metabolism), and maintaining a healthy diet.",
-            "Create a balanced exercise program by including a variety of workouts (strength, cardio, flexibility), setting achievable goals, and listening to your body to avoid overtraining."
-        },
         new string[] {
             "The best exercises for building chest muscles are bench press, push-ups, and chest flyes.",
-            "To perform a bench press correctly, lie on the bench with your feet flat on the ground, grip the bar slightly wider than shoulder-width apart, and lower the bar to your chest before pressing it back up.",
+            "To perform a bench press correctly, lie on the bench with your feet flat on the ground, and lower the bar to your chest before pressing it back up.",
             "Incline bench press targets the upper part of your chest, while decline bench press targets the lower part of your chest.",
             "To avoid shoulder injuries, ensure proper form, warm up before exercises, and avoid lifting too heavy too soon.",
             "Effective chest workouts for beginners include push-ups, dumbbell presses, and chest flyes with light weights."
@@ -138,14 +138,14 @@ public class FAQManager : MonoBehaviour
         }, // Shoulder answers
         new string[] {
             "The best exercises for building leg muscles are squats, lunges, and leg presses.",
-            "To perform a squat correctly, stand with your feet shoulder-width apart, lower your body as if sitting back into a chair, keep your chest up and knees over your toes, and then return to standing.",
+            "To perform a squat correctly, lower your body as if sitting back into a chair, keep your chest up and knees over your toes,and then return to standing.",
             "Lunges target the quads, glutes, and hamstrings similarly to squats, but lunges also engage stabilizing muscles due to the forward step.",
             "You should train your legs 2-3 times per week, allowing rest days in between for recovery.",
-            "Common mistakes to avoid during leg workouts include letting your knees go past your toes during squats, not lowering yourself fully during exercises, and not engaging your core."
+            "Common mistakes to avoid include letting your knees go past your toes during squats, not lowering yourself fully during exercises,and not engaging your core."
         }, // Leg answers
         new string[] {
             "The best exercises for building bicep muscles are bicep curls, hammer curls, and chin-ups.",
-            "To perform a bicep curl correctly, stand with your feet shoulder-width apart, hold the weights with an underhand grip, and curl the weights up while keeping your elbows close to your sides.",
+            "To perform a bicep curl correctly, hold the weights with an underhand grip, and curl the weights up while keeping your elbows close to your sides.",
             "Effective bicep workouts for beginners include light dumbbell bicep curls, hammer curls, and resistance band curls.",
             "To avoid elbow injuries, use proper form, avoid lifting too heavy too soon, and ensure adequate warm-up and stretching before workouts.",
             "Using free weights for bicep workouts engages more stabilizing muscles, while machines can help maintain proper form and reduce injury risk."
@@ -159,7 +159,7 @@ public class FAQManager : MonoBehaviour
         }, // Triceps answers
         new string[] {
             "The best exercises for building back muscles are pull-ups, bent-over rows, and deadlifts.",
-            "To perform a pull-up correctly, grip the bar with your palms facing away from you, pull your body up until your chin is above the bar, and then lower back down with control.",
+            "To perform a pull-up correctly, pull your body up until your chin is above the bar, and then lower back down with control.",
             "Effective back workouts for beginners include assisted pull-ups, light bent-over rows, and resistance band rows.",
             "To avoid lower back injuries, use proper form, engage your core during exercises, and avoid lifting too heavy too soon.",
             "Using free weights for back workouts engages more stabilizing muscles, while machines can help maintain proper form and reduce injury risk."
@@ -240,9 +240,8 @@ public class FAQManager : MonoBehaviour
 
         RectTransform imageRect = trainerImage.GetComponent<RectTransform>();
         if (imageRect != null)
-        {
-           
-            imageRect.anchoredPosition = new Vector2(trainerTextPosition.x, trainerTextPosition.y - index * 150f);
+        {         
+            imageRect.anchoredPosition = new Vector2(trainerImagePosition.x, trainerImagePosition.y - index * 200f);
         }
         else
         {
@@ -263,6 +262,11 @@ public class FAQManager : MonoBehaviour
             Debug.LogError("TMP_Text component not found in trainerTextPrefab.");
             return;
         }
+       // else
+       // {
+         //   trainerTextComponent.text =  answers[selectedCategoryID][index];
+         //   LayoutRebuilder.ForceRebuildLayoutImmediate(trainerText.GetComponent<RectTransform>());
+       // }
 
         try
         {
@@ -277,7 +281,7 @@ public class FAQManager : MonoBehaviour
         if (textRect != null)
         {
            
-            textRect.anchoredPosition = new Vector2(trainerTextPosition.x, trainerTextPosition.y - index * 150f);
+            textRect.anchoredPosition = new Vector2(trainerTextPosition.x, trainerTextPosition.y - index * 200f);
         }
         else
         {

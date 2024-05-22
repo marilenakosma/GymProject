@@ -99,15 +99,15 @@ public class FAQManager : MonoBehaviour
             "Regular exercise improves cardiovascular health, strengthens muscles, boosts mental health, helps with weight management, and increases overall energy levels.",
             "Set realistic goals, track your progress, vary your workouts to keep them interesting, find a workout buddy, and reward yourself for reaching milestones."
         },
-        new string[] // Injury Prevention answers
+        new string[] // Exercise Program answers
         {
             "Structure your weekly routine by balancing different types of exercises: strength training, cardio, flexibility, and rest days.",
-            "Strength training focuses on building muscle mass and strength through resistance exercises, while cardio workouts improve cardiovascular health by increasing your heart rate.",
+            "Strength training focuses on building muscle mass and strength through resistance exercises, while cardio workouts improve health by increasing your heart rate.",
             "Progress your workouts by gradually increasing the intensity, duration, or resistance, and incorporating new exercises to challenge your body.",
             "For weight loss, focus on high-intensity interval training (HIIT), strength training to build muscle (which increases metabolism), and maintaining a healthy diet.",
-            "Create a balanced exercise program by including a variety of workouts (strength, cardio, flexibility), setting achievable goals, and listening to your body to avoid overtraining."
+            "Create a balanced exercise program by including a variety of workouts (strength, cardio, flexibility), setting achievable goals, and listening to your body."
         },
-        new string[] // Exercise Programs answers
+        new string[] // Injury Prevention answers
         {
             "Common exercise-related injuries include sprains, strains, and tendinitis. Avoid them by using proper form, warming up, cooling down, and not overexerting yourself.",
             "Proper form is crucial to avoid injuries and maximize the effectiveness of your exercises.",

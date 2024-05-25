@@ -9,6 +9,7 @@ public class WeightTracker : MonoBehaviour
     public TMP_InputField userInputField;
     public TextMeshProUGUI displayText;
     public Button saveButton;
+    public Button editButton;
 
     // Δημιουργία μιας δομής για την αποθήκευση βάρους και ημερομηνίας
     [Serializable]
@@ -29,11 +30,18 @@ public class WeightTracker : MonoBehaviour
 
     void Start()
     {
+        // Απόκρυψη του πεδίου εισαγωγής και του κουμπιού αποθήκευσης αρχικά
+        userInputField.gameObject.SetActive(false);
+        saveButton.gameObject.SetActive(false);
+
         // Προσθήκη ακροατή στο πεδίο εισαγωγής για να ανιχνεύει τις αλλαγές
         userInputField.onEndEdit.AddListener(HandleUserInput);
 
         // Προσθήκη ακροατή στο κουμπί "save" για να ανιχνεύει το πάτημα του κουμπιού
         saveButton.onClick.AddListener(SaveWeightEntry);
+
+        // Προσθήκη ακροατή στο κουμπί "edit" για να ανιχνεύει το πάτημα του κουμπιού
+        editButton.onClick.AddListener(EditEntry);
     }
 
     void HandleUserInput(string input)
@@ -71,5 +79,22 @@ public class WeightTracker : MonoBehaviour
             displayText.text = "Invalid input. Please enter a valid number.";
             Debug.Log("Invalid input. Please enter a valid number.");
         }
+
+        // Απόκρυψη του πεδίου εισαγωγής και του κουμπιού αποθήκευσης
+        userInputField.gameObject.SetActive(false);
+        saveButton.gameObject.SetActive(false);
+
+        // Εμφάνιση του κουμπιού επεξεργασίας
+        editButton.gameObject.SetActive(true);
+    }
+
+    void EditEntry()
+    {
+        // Εμφάνιση του πεδίου εισαγωγής και του κουμπιού αποθήκευσης
+        userInputField.gameObject.SetActive(true);
+        saveButton.gameObject.SetActive(true);
+
+        // Απόκρυψη του κουμπιού επεξεργασίας
+        editButton.gameObject.SetActive(false);
     }
 }

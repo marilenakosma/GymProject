@@ -10,4 +10,10 @@ public class SceneChange : MonoBehaviour
         SceneManager.LoadScene(SceneID);
     }
 
+    public void SelectCategory(int categoryIndex,int SceneID)
+    {
+        PlayerPrefs.SetInt("SelectedCategory", categoryIndex);
+        MoveToScene(SceneID);
+    }
+
 }

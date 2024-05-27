@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System;
 using System.Collections.Generic;
 
 public class DisplayAllTimes : MonoBehaviour
@@ -9,6 +10,23 @@ public class DisplayAllTimes : MonoBehaviour
 
     void Start()
     {
+        // Έλεγχος αν η μέρα έχει αλλάξει
+        string lastSavedDate = PlayerPrefs.GetString("LastSavedDate", DateTime.MinValue.ToString());
+        DateTime lastDate = DateTime.Parse(lastSavedDate);
+        DateTime currentDate = DateTime.Today;
+
+        // Αν η μέρα έχει αλλάξει, μηδενίζουμε τους χρόνους
+        if (currentDate > lastDate)
+        {
+            foreach (string pageId in pageIdentifiers)
+            {
+                PlayerPrefs.SetFloat(pageId, 0);
+            }
+            PlayerPrefs.SetString("LastSavedDate", currentDate.ToString());
+            PlayerPrefs.Save();
+        }
+
+        // Εμφάνιση των χρόνων
         string allTimesText = "";
         foreach (string pageId in pageIdentifiers)
         {

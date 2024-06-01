@@ -32,7 +32,7 @@ public class DisplayAllTimes : MonoBehaviour
         {
             float elapsedTime = PlayerPrefs.GetFloat(pageId, 0);
             allTimesText += $"{pageId}: {elapsedTime.ToString("F2")} seconds\n";
-            Debug.Log($"Saved Elapsed Time for {pageId}: {elapsedTime} seconds");
+            //Debug.Log($"Saved Elapsed Time for {pageId}: {elapsedTime} seconds");
         }
         displayText.text = allTimesText;
     }

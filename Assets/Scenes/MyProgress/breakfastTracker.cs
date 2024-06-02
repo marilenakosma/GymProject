@@ -20,9 +20,6 @@ public class FoodEntry : MonoBehaviour
         string foodName = foodNameInput.text;
         float calories = float.Parse(caloriesInput.text);
 
-        Debug.Log("hello");
-
-
         // Αποθηκεύουμε τα δεδομένα μαζί με την σημερινή ημερομηνία
         PlayerPrefs.SetString("FoodName", foodName);
         PlayerPrefs.SetFloat("Calories", calories);

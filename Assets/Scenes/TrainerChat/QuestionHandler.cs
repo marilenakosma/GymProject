@@ -15,9 +15,7 @@ public class FAQManager : MonoBehaviour
     private Vector2 trainerImagePosition = new Vector2(-100f, 408f);
     private Vector2 trainerTextPosition = new Vector2(300f, 408f);
 
-    /*                
-     * 
-     */
+    
     // Categories of questions
     private string[][] questions = new string[][]
     {
@@ -85,7 +83,15 @@ public class FAQManager : MonoBehaviour
             "What is the difference between HIIT and steady-state cardio?",
             "How can I make cardio workouts more interesting?",
             "What are some common mistakes to avoid during cardio workouts?"
-        } // Cardio questions
+        }, // Cardio questions
+        new string[]
+        {
+            "How long does shipping take?",
+            "How can I track my order? ",
+            "What payment methods do you accept?",
+            "Is my payment information secure?",
+            "Can I request a product that is not listed on your website?"
+        } //Shipping
     };
 
 
@@ -170,7 +176,15 @@ public class FAQManager : MonoBehaviour
             "HIIT (High-Intensity Interval Training) involves short bursts of intense activity followed by rest, while steady-state cardio involves maintaining a consistent, moderate intensity.",
             "To make cardio workouts more interesting, try varying your routine, using different equipment, and setting new challenges.",
             "Common mistakes to avoid during cardio workouts include overtraining, not warming up properly, and using improper form."
-        } // Cardio answers
+        }, // Cardio answers
+        new string[]
+        {
+            "Shipping typically takes 3-7 business days, depending on your location and the shipping method selected.",
+            "Once your order is shipped, you will receive an email with a tracking number and a link to track your order online",
+            "We accept major credit cards (Visa, MasterCard, American Express), PayPal, and Apple Pay",
+            "Yes, we use industry-standard encryption to protect your payment information and ensure a secure transaction process",
+            "If you are looking for a specific product not listed on our website, please contact our customer support team with your request, and we will do our best to assist you"
+        }
     };
 
     void Start()

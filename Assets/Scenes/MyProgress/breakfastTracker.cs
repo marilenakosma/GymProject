@@ -61,4 +61,6 @@ public class BreakfastEntry : MonoBehaviour
         caloriesInput.interactable = false;
         saveButton.gameObject.SetActive(false);
     }
+
+
 }

@@ -61,4 +61,5 @@ public class DinnerEntry : MonoBehaviour
         caloriesInput.interactable = false;
         saveButton.gameObject.SetActive(false);
     }
+
 }

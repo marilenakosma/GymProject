@@ -5,8 +5,9 @@ using System.Collections.Generic;
 
 public class DisplayAllTimes : MonoBehaviour
 {
-    public TextMeshProUGUI displayText; // Αναφορά στο TextMeshProUGUI για την εμφάνιση των χρόνων
+    public TextMeshProUGUI allTimes; // Αναφορά στο TextMeshProUGUI για την εμφάνιση των χρόνων
     public List<string> pageIdentifiers; // Λίστα με τους προσδιοριστές σελίδων
+    public TextMeshProUGUI totalSecondsText;
 
     void Start()
     {
@@ -26,7 +27,17 @@ public class DisplayAllTimes : MonoBehaviour
             PlayerPrefs.Save();
         }
 
-        // Εμφάνιση των χρόνων
+        // Υπολογισμός συνόλου χρόνων
+        float totalElapsedTime = 0;
+        foreach (string pageId in pageIdentifiers)
+        {
+            float elapsedTime = PlayerPrefs.GetFloat(pageId, 0);
+            totalElapsedTime += elapsedTime;
+        }
+        totalElapsedTime = totalElapsedTime / 10; // για το κάψιμο μια θερμίδας, χρειάζονται 10 seconds
+        totalSecondsText.text = totalElapsedTime.ToString("F0");
+
+        // Εμφάνιση των χρόνων ανά σελίδα
         string allTimesText = "";
         foreach (string pageId in pageIdentifiers)
         {
@@ -34,6 +45,8 @@ public class DisplayAllTimes : MonoBehaviour
             allTimesText += $"{pageId}: {elapsedTime.ToString("F2")} seconds\n";
             //Debug.Log($"Saved Elapsed Time for {pageId}: {elapsedTime} seconds");
         }
-        displayText.text = allTimesText;
+        allTimes.text = allTimesText;
+
+
     }
 }

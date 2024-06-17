@@ -9,16 +9,9 @@ public class SubtractValues : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-        Debug.Log($"Input 1: {inputText1.text}");
-        Debug.Log($"Input 2: {inputText2.text}");
         // Ελέγχουμε αν υπάρχουν τιμές στα πεδία κειμένου
         if (inputText1 != null && inputText2 != null && resultText != null)
         {
-            // Εμφανίζουμε τις τιμές των εισόδων στην κονσόλα
-            Debug.Log($"Input 1: {inputText1.text}");
-            Debug.Log($"Input 2: {inputText2.text}");
-
             // Μετατροπή των κειμένων σε αριθμούς (χρησιμοποιούμε TryParse για ασφάλεια)
             if (float.TryParse(inputText1.text, out float value1) && float.TryParse(inputText2.text, out float value2))
             {

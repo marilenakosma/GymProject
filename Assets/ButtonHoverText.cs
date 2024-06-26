@@ -18,5 +18,10 @@ public class ButtonHoverText : MonoBehaviour, IPointerEnterHandler, IPointerExit
     {
         descText.SetActive(false);
     }
+
+    public void HideDescription()
+    {
+        descText.SetActive(false);
+    }
 }
 

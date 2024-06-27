@@ -10,6 +10,9 @@ public class CalorieGraph : MonoBehaviour
     public LineRenderer lineRenderer2;
     public TextMeshProUGUI xAxisLabel;
     public TextMeshProUGUI yAxisLabel;
+    public GameObject xAxisLabelPrefab; // Prefab for X axis labels
+    public GameObject yAxisLabelPrefab; // Prefab for Y axis labels
+    public GameObject labelPrefab; // Prefab for labels (newly added)
 
     private void Start()
     {
@@ -30,6 +33,24 @@ public class CalorieGraph : MonoBehaviour
         lineRenderer1.positionCount = calorieIntake.Length;
         lineRenderer2.positionCount = caloriesBurned.Length;
 
+        // Clear previous labels
+        foreach (Transform child in graphContainer.transform)
+        {
+            if (child.name == "XAxisLabel" || child.name == "YAxisLabel" || child.name == "LegendLabel")
+            {
+                Destroy(child.gameObject);
+            }
+        }
+
+        // Create Y axis labels
+        int separatorCount = 10; // Number of intervals on Y axis
+        for (int i = 0; i <= separatorCount; i++)
+        {
+            float normalizedValue = i * 1f / separatorCount;
+            float yPosition = normalizedValue * graphHeight;
+            CreateYAxisLabel(yPosition, (normalizedValue * yMaximum).ToString("0"));
+        }
+
         for (int i = 0; i < calorieIntake.Length; i++)
         {
             float xPosition = xSize + i * xSize;
@@ -39,12 +60,18 @@ public class CalorieGraph : MonoBehaviour
             CreateCircle(new Vector2(xPosition, yPosition1));
             CreateCircle(new Vector2(xPosition, yPosition2));
 
-            lineRenderer1.SetPosition(i, new Vector3(xPosition, yPosition1));
-            lineRenderer2.SetPosition(i, new Vector3(xPosition, yPosition2));
+            lineRenderer1.SetPosition(i, new Vector3(xPosition, yPosition1, 0));
+            lineRenderer2.SetPosition(i, new Vector3(xPosition, yPosition2, 0));
 
-            xAxisLabel.text = "Days of the Month";
-            yAxisLabel.text = "Calories";
+            CreateXAxisLabel(xPosition, (i + 1).ToString()); // Labeling days of the month
         }
+
+        xAxisLabel.text = "Days of the Month";
+        yAxisLabel.text = "Calories";
+
+        // Create legend labels
+        CreateLegendLabel(new Vector2(100, graphHeight + 30), "Calories Intake", Color.red);
+        CreateLegendLabel(new Vector2(250, graphHeight + 30), "Calories Burned", Color.blue);
     }
 
     private void CreateCircle(Vector2 anchoredPosition)
@@ -57,5 +84,43 @@ public class CalorieGraph : MonoBehaviour
         rectTransform.sizeDelta = new Vector2(11, 11);
         rectTransform.anchorMin = new Vector2(0, 0);
         rectTransform.anchorMax = new Vector2(0, 0);
+    }
+
+    private void CreateXAxisLabel(float xPosition, string label)
+    {
+        GameObject labelObject = Instantiate(xAxisLabelPrefab);
+        labelObject.transform.SetParent(graphContainer, false);
+        RectTransform rectTransform = labelObject.GetComponent<RectTransform>();
+        rectTransform.anchoredPosition = new Vector2(xPosition, 0f); // Adjust Y offset as needed
+        rectTransform.anchorMin = new Vector2(0, 0);
+        rectTransform.anchorMax = new Vector2(0, 0);
+        labelObject.GetComponent<TextMeshProUGUI>().text = label;
+        labelObject.name = "XAxisLabel";
+    }
+
+    private void CreateYAxisLabel(float yPosition, string label)
+    {
+        GameObject labelObject = Instantiate(yAxisLabelPrefab);
+        labelObject.transform.SetParent(graphContainer, false);
+        RectTransform rectTransform = labelObject.GetComponent<RectTransform>();
+        rectTransform.anchoredPosition = new Vector2(0f, yPosition); // Adjust X offset as needed
+        rectTransform.anchorMin = new Vector2(0, 0);
+        rectTransform.anchorMax = new Vector2(0, 0);
+        labelObject.GetComponent<TextMeshProUGUI>().text = label;
+        labelObject.name = "YAxisLabel";
+    }
+
+    private void CreateLegendLabel(Vector2 position, string labelText, Color color)
+    {
+        GameObject labelObject = Instantiate(labelPrefab);
+        labelObject.transform.SetParent(graphContainer, false);
+        RectTransform rectTransform = labelObject.GetComponent<RectTransform>();
+        rectTransform.anchoredPosition = position; // Adjust the position as needed
+        rectTransform.anchorMin = new Vector2(0, 0);
+        rectTransform.anchorMax = new Vector2(0, 0);
+        TextMeshProUGUI textMesh = labelObject.GetComponent<TextMeshProUGUI>();
+        textMesh.text = labelText;
+        textMesh.color = color;
+        labelObject.name = "LegendLabel";
     }
 }

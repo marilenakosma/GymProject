@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using Unity.Burst.Intrinsics;
 
 public class FAQManager : MonoBehaviour
 {
@@ -91,7 +92,16 @@ public class FAQManager : MonoBehaviour
             "What payment methods do you accept?",
             "Is my payment information secure?",
             "Can I request a product that is not listed on your website?"
-        } //Shipping
+        }, //Shipping
+        new string[]
+        {
+            "What should I eat to gain leg muscle?",
+            "What foods should I eat to build up core strength?",
+            "How can I plan my meals for a busy week?",
+            "What are some healthy snack ideas?",
+            "How can I make sure I’m getting enough protein?"
+        }
+
     };
 
 
@@ -184,7 +194,16 @@ public class FAQManager : MonoBehaviour
             "We accept major credit cards (Visa, MasterCard, American Express), PayPal, and Apple Pay",
             "Yes, we use industry-standard encryption to protect your payment information and ensure a secure transaction process",
             "If you are looking for a specific product not listed on our website, please contact our customer support team with your request, and we will do our best to assist you"
-        }
+        },
+        // Meal Planning
+        new string[]
+        {
+             "Focus on lean proteins (chicken, fish, tofu), whole grains (brown rice, quinoa), healthy fats (avocado, nuts), and plenty of fruits and vegetables.",
+             "Incorporate high-protein foods like lean meats, eggs, legumes, and dairy. Also, include complex carbohydrates such as sweet potatoes, along with healthy fats like olive oil.",
+             "Plan your meals in advance, focusing on simple, balanced recipes. Prepare ingredients or full meals ahead of time, and use leftovers creatively.",
+             "Some healthy snacks include fresh fruit, nuts and seeds, yogurt with berries, vegetable sticks with hummus, and whole grain crackers with cheese.",
+             "Include a source of protein in every meal, such as lean meats, eggs, dairy, legumes, or plant-based alternatives."
+        },
     };
 
     void Start()

@@ -14,17 +14,14 @@ public class Selling : MonoBehaviour
 
     public void OnSubmitButtonClicked()
     {
-        // Clear previous messages
         errorMessageText.text = "";
         successMessageText.text = "";
 
-        // Get the values from input fields
         string Name = NameInputField.text;
         string CardNumber = CardNumberInputField.text;
         string ExpDate = ExpirationDateInputField.text;
         string CVV =CVVInputField.text;
 
-        // Check for empty fields
         if (string.IsNullOrWhiteSpace(Name) || string.IsNullOrWhiteSpace(CardNumber) || string.IsNullOrWhiteSpace(ExpDate) || string.IsNullOrWhiteSpace(CVV))
         {
             errorMessageText.text = "Please fill out all fields.";

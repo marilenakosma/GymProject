@@ -12,19 +12,20 @@ public class ContactForm : MonoBehaviour
 
     public void OnSubmitButtonClicked()
     {
-        // Clear previous messages
         errorMessageText.text = "";
         successMessageText.text = "";
 
-        // Get the values from input fields
         string fullName = fullNameInputField.text;
         string phoneNumber = phoneNumberInputField.text;
         string message = messageInputField.text;
 
-        // Check for empty fields
         if (string.IsNullOrWhiteSpace(fullName) || string.IsNullOrWhiteSpace(phoneNumber) || string.IsNullOrWhiteSpace(message))
         {
             errorMessageText.text = "Please fill out all fields.";
+        }
+        else if (phoneNumber.Length != 10)
+        {
+            errorMessageText.text = "Phone Number must be 10 characters long";
         }
         else
         {

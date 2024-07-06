@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System;
 
 public class Selling : MonoBehaviour
 {
@@ -27,6 +28,14 @@ public class Selling : MonoBehaviour
         if (string.IsNullOrWhiteSpace(Name) || string.IsNullOrWhiteSpace(CardNumber) || string.IsNullOrWhiteSpace(ExpDate) || string.IsNullOrWhiteSpace(CVV))
         {
             errorMessageText.text = "Please fill out all fields.";
+        }
+        else if(CardNumber.Length != 16)
+        {
+            errorMessageText.text = "Card Number must be 16 characters";
+        }
+        else if(CVV.Length !=3)
+        {
+            errorMessageText.text = "CVV must be 3 characters";
         }
         else
         {

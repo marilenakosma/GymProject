@@ -14,15 +14,17 @@ It simulates a virtual gym environment through menus, buttons, panels, and other
 
 -Screens for gym rooms, menu navigation, and interactions.
 
--Button-based movement rather than 3D movement.
-
 ![Main](pictures/Main.png)
+
+-A main menu guide for ease of navigation.
+
+![Guide](pictures/Guide.png)
 
 ## 🧩 2. Exercise & Nutrition Information
 
--Panels showing exercise instructions.
+-An interactive exercise selection screen showing all the available exercises per muscle group.
 
--Nutrition tips accessible through the UI.
+-A workout screen featuring videos to accompany users along with a timer
 
 ### Exercise Selection Screen
 ![Exercises](pictures/Exercises.png)
@@ -30,19 +32,31 @@ It simulates a virtual gym environment through menus, buttons, panels, and other
 ### Workout Screen
 ![Workouts](pictures/Workouts.png)
 
+-A nutrition goal selection screen
+
+-A nutrition screen with meal ideas for every meal of the day
+
 ### Nutrition Screen
-![Workouts](pictures/Workouts.png)
+![Nutrition](pictures/Nutrition.png)
 
 ### Nutrition Tips
 ![NutritionTips](pictures/NutritionTips.png)
 
 ## 📈 3. Basic Progress Tracking
 
-Simple displays for user progress or daily routines.
+-Displays for user progress,including time spend exercising per muscle group,
+calorie tracking and personal user info 
+
+![MyProgress](pictures/MyProgress.png)
 
 ## 👥 4. Virtual Trainer & Nutritionist UI
 
-Dialog-like interactions via buttons.
+-A question category selection for ease of choice
+
+- Dialog-like trainer interactions via button click.
+
+![QuestionCategories](pictures/QuestionCategories.png)
+![Trainer](pictures/Trainer.png)
 
 ## 🛒 5. Product & Diet Program Shop
 

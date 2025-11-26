@@ -51,19 +51,32 @@ calorie tracking and personal user info
 
 ## 👥 4. Virtual Trainer & Nutritionist UI
 
--A question category selection for ease of choice
+-A question category selection for ease of choice.
 
 - Dialog-like trainer interactions via button click.
 
+### Question Category Selection
 ![QuestionCategories](pictures/QuestionCategories.png)
+
+### Trainer UI
 ![Trainer](pictures/Trainer.png)
 
 ## 🛒 5. Product & Diet Program Shop
 
 A UI simulation of purchasing gym products or meal plans.
 
+![Eshop](pictures/Eshop.png)
+
 ## 📝 6. Custom Workout Plans
 
-Users can choose options from UI elements (toggles, dropdowns, etc.) to generate simple workout plans.
+Users can choose from premade workout plans according to their liking.
 
-## 🎮 7. Small Interactive UI Quiz
+### Workout Goal Selection
+![WorkoutGoal](pictures/WorkoutGoal.png)
+
+### Workout Plans 
+![WorkoutPlans](pictures/WorkoutPlans.png)
+
+## 🎮 7. Interactive Quiz
+
+![Quiz](pictures/Quiz.png)

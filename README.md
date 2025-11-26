@@ -63,7 +63,7 @@ calorie tracking and personal user info
 
 ## 🛒 5. Product & Diet Program Shop
 
-A UI simulation of purchasing gym products or meal plans.
+A UI simulation of purchasing gym products.
 
 ![Eshop](pictures/Eshop.png)
 

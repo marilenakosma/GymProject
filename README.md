@@ -80,3 +80,13 @@ Users can choose from premade workout plans according to their liking.
 ## 🎮 7. Interactive Quiz
 
 ![Quiz](pictures/Quiz.png)
+
+---
+
+## 👥 Authors
+- **George Gomez**
+- **Chen JinFei**
+- **Marilena Kosma**
+- **Amanda Alexopoulou**
+
+Copyright © 2023-2024

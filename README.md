@@ -1,13 +1,16 @@
 ## 🏋️ Virtual Gym Interface
 
-A 2D Unity application simulating user interaction inside a virtual gym.
-
-## 📌 Overview
-
-This project is a Unity-based 2D application created for a Human–Computer Interaction (HCI) assignment.
-It simulates a virtual gym environment through menus, buttons, panels, and other UI elements.
+A 2D Unity application simulating user interaction inside a virtual gym created for a Human–Computer Interaction (HCI) assignment.It simulates a virtual gym environment through menus, buttons, panels, and other UI elements.
 
 ---
+
+## 👥 Authors
+- **George Gomez**
+- **Chen JinFei**
+- **Marilena Kosma**
+- **Amanda Alexopoulou**
+
+**Copyright © 2023-2024**
 
 ## 🎯 Features
 🧭 1. 2D UI Navigation
@@ -82,11 +85,3 @@ Users can choose from premade workout plans according to their liking.
 ![Quiz](pictures/Quiz.png)
 
 ---
-
-## 👥 Authors
-- **George Gomez**
-- **Chen JinFei**
-- **Marilena Kosma**
-- **Amanda Alexopoulou**
-
-Copyright © 2023-2024
